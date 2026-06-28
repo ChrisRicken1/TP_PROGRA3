@@ -89,7 +89,7 @@ try {
                 
                 <div class="mt-4">
                     <p class="text-xl font-mono tracking-widest mb-2">**** **** **** <?php echo htmlspecialchars(substr($tarjeta['numero_tarjeta'], -4)); ?></p>
-                    <p class="text-sm opacity-90">Titular: <?php echo htmlspecialchars($tarjeta['titular']); ?></p>
+                    <p class="text-sm opacity-90">Titular: <?php echo htmlspecialchars($usuario_actual['nombre'] . ' ' . $usuario_actual['apellido']); ?></p>
                 </div>
 
                 <div class="flex justify-between items-end mt-4">
@@ -113,8 +113,8 @@ try {
 
                     <div class="flex justify-between items-center border-b pb-4 mb-4">
                         <div>
-                            <h3 class="text-2xl font-bold text-[#004691]">Liquidación <?php echo htmlspecialchars($liquidacion_actual['periodo']); ?></h3>
-                            <p class="text-sm text-gray-500">Período: <?php echo htmlspecialchars($liquidacion_actual['periodo_inicio']); ?> al <?php echo htmlspecialchars($liquidacion_actual['periodo_fin']); ?></p>
+                            <h3 class="text-2xl font-bold text-[#004691]">Liquidación Período <?php echo htmlspecialchars($liquidacion_actual['periodo']); ?></h3>
+                            <p class="text-sm text-gray-500">Vencimiento: <?php echo htmlspecialchars(date('d/m/Y', strtotime($liquidacion_actual['fecha_vencimiento']))); ?></p>
                         </div>
                         <span class="text-3xl font-bold $<?php echo htmlspecialchars($liquidacion_actual['total_resumen']); ?>"></span>
                     </div>

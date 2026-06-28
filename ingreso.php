@@ -23,16 +23,18 @@ try {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    $usuario = trim($_POST['usuario'] ?? '');
-    $password = trim($_POST['password'] ?? '');
+    $tipo_doc  = trim($_POST['tipo_doc'] ?? '');
+    $documento = trim($_POST['documento'] ?? '');
+    $usuario   = trim($_POST['usuario'] ?? '');
+    $password  = trim($_POST['password'] ?? '');
 
-    if ($usuario === "" || $password === "") {
+    if ($tipo_doc === "" || $documento === "" || $usuario === "" || $password === "") {
         die("Error: Debe completar todos los campos.");
     }
 
     try {
-        $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE usuario = ? AND password = ?");
-        $stmt->execute([$usuario, $password]);
+        $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE documento = ? AND tipo_doc = ? AND usuario = ? AND password = ?");
+        $stmt->execute([$documento, $tipo_doc, $usuario, $password]);
         $usuario_db = $stmt->fetch();
 
         if ($usuario_db) {
@@ -41,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: resumen.php");
             exit;
         } else {
-            echo "<script>alert('Usuario o contraseña incorrectos.'); window.location.href='ingreso.html';</script>";
+            echo "<script>alert('Datos de ingreso incorrectos. Verifique documento, usuario y contraseña.'); window.location.href='ingreso.html';</script>";
         }
 
     } catch (PDOException $e) {

@@ -1,5 +1,4 @@
 <?php
-// 1. Conexión a la base de datos de XAMPP
 $host = "localhost";
 $db   = "mi_banco_db";
 $user = "root";
@@ -19,7 +18,6 @@ try {
     die("Error al conectar a la base de datos: " . $e->getMessage());
 }
 
-// 2. Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $tipo_doc         = trim($_POST['tipo_doc'] ?? '');
@@ -54,11 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         $sql_update = "UPDATE usuarios 
-                       SET usuario = ?, password = ?, email = ? 
-                       WHERE documento = ? AND tipo_doc = ?";
+                       SET usuario = ?, password = ?, email = ?, tipo_doc = ? 
+                       WHERE documento = ?";
         
         $stmt = $pdo->prepare($sql_update);
-        $stmt->execute([$usuario, $passwordA, $email, $documento, $tipo_doc]);
+        $stmt->execute([$usuario, $passwordA, $email, $tipo_doc, $documento]);
 
         echo "<script>
                 alert('¡Tu usuario web ha sido activado con éxito! Ya podés iniciar sesión.');
