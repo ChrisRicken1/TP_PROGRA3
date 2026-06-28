@@ -2,6 +2,9 @@
 # Programación III 2026 #
 # TP Integrador: Sistema de Consulta de Liquidaciones "Mis Tarjetas" 💳
 
+Integrantes: Rickenbacher Christian Alexander
+Comision: Turno Mañana Programación III 2026
+
 ¡Bienvenido al Trabajo Práctico Integrador de la asignatura **Programación III**! En este proyecto vas a trabajar en la integración de plataformas implementando un ecosistema donde una aplicación de escritorio y un portal web comparten la misma base de datos relacional.
 
 ---
@@ -55,3 +58,5 @@ Para optimizar los tiempos de la cursada, quedan **excluidos** de este trabajo p
 *¡Mucho éxito en el desarrollo! Ante cualquier duda, recordá consultar vía Teams o durante las clases presenciales.*
 
 Osvaldo Cantone
+
+
