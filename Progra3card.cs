@@ -54,6 +54,9 @@ namespace Progra3Card.Administrativo
             // Aquí deben implementar un SELECT sobre la tabla 'tarjetas'
             // para recorrer las filas e imprimirlas en la consola.
             
+
+
+            
             ObtenerYMostrarTarjetas();
 
             Console.WriteLine("\nPresione una tecla para volver al menú...");
