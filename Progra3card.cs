@@ -129,6 +129,7 @@ namespace Progra3Card.Administrativo
 
         static void MenuEmitirLiquidacion()
         {
+            Console.Clear();
             Console.WriteLine("--- EMITIR NUEVA LIQUIDACIÓN MENSUAL ---");
 
             Console.Write("Ingrese el Número de Cuenta del cliente: ");
